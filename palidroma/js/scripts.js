@@ -1,9 +1,9 @@
 function palidromaONo (parola){
     if(parolaInserita == parolaInversa){
-        alert('la parola è palindroma');
+        alert("la parola E' palidroma");
     } 
     else {
-        alert('la parola non è palindroma');
+        alert("la parola NON E' palidroma");
     }
 }
 
