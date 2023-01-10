@@ -7,19 +7,26 @@ function palidromaONo (parola){
     }
 }
 
-const parolaInserita = prompt('inserisci una parola e verifichiamo se è palindroma oppure no');
-console.log('la parola inserita è: ', parolaInserita)
+let parolaInserita = prompt('inserisci una parola e verifichiamo se è palindroma oppure no');
 let carattere;
 let parolaInversa = '';
 
+let i = 0
+while(isNaN(parolaInserita) == false){
+    parolaInserita = prompt('valori non validi. inserisci una parola e verifichiamo se è palindroma oppure no');
 
-let i = parolaInserita.length - 1;
-while (i >= 0) {
-  carattere = parolaInserita[i];
+    i++
+}
+console.log('la parola inserita è: ', parolaInserita)
+
+
+let j = parolaInserita.length - 1;
+while (j >= 0) {
+  carattere = parolaInserita[j];
   parolaInversa += carattere;
-  console.log(i, carattere);
+  console.log(j, carattere);
   
-  i--;
+  j--;
 }
 console.log('parola invertita: ', parolaInversa);
 
