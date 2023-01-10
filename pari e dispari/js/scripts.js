@@ -5,39 +5,43 @@ function generaNumeroRandom(min, max) {
     return numeroRandom;
 }
 
-const pariODispari = prompt('scegli pari o dispari');
-console.log('utente ha scelto ', pariODispari,)
-
-if (pariODispari == 'pari' || pariODispari == 'dispari') {
-    
-    const numeroUtente = parseInt(prompt('inserisci un numero da 1 a 5'));
-    console.log('numero inserito: ', numeroUtente);
-
-    if(numeroUtente < 1 || numeroUtente > 5){
-        alert('valori non validi. Devi scegliere un numero da 1 a 5')
+function risultatoPariDispari(numero){
+    if(numero % 2 == 0 && pariODispari == 'pari' || numero % 2 != 0 && pariODispari == 'dispari' ){
+        console.log('hai vinto');
+        alert('Complimenti. hai vinto :)');
+        
     }
     else{
-        const numeroComputer = generaNumeroRandom(1, 5)
-        console.log('numero computer: ', numeroComputer);
-
-        const somma = numeroUtente + numeroComputer;
-        console.log('somma dei due numero = ', somma);
-
-        if(somma % 2 == 0 && pariODispari == 'pari'){
-            alert('hai vinto')
-            console.log('hai vinto')
-        }
-        else if(somma % 2 != 0 && pariODispari == 'dispari'){
-            alert('hai vinto')
-            console.log('hai vinto')
-        }
-        else{
-            alert('hai perso')
-            console.log('hai perso')
-        }
-        }
-
+        console.log('hai perso');
+        alert('Mi dispiace. hai perso :(');
+            
+    }
 }
-else{
-    alert('valori non validi')
+
+let pariODispari = prompt('scegli pari o dispari.');
+
+let i = 0
+while(pariODispari !== 'pari' && pariODispari !== 'dispari'){
+    pariODispari = prompt('valori non validi. \nScegli pari o dispari');
+
+    i++
 }
+console.log('utente ha scelto ', pariODispari,);
+
+let numeroUtente = parseInt(prompt('inserisci un numero da 1 a 5'));
+
+let j = 0
+while(numeroUtente < 1 || numeroUtente > 5 || isNaN(numeroUtente) == true){
+    numeroUtente = parseInt(prompt('valori non validi. \nInserisci un numero da 1 a 5'));
+
+    j++
+}
+console.log('numero inserito: ', numeroUtente);
+
+const numeroComputer = generaNumeroRandom(1, 5);
+console.log('numero computer: ', numeroComputer);
+
+const somma = numeroUtente + numeroComputer;
+console.log('somma dei due numero = ', somma);
+
+const risultato = risultatoPariDispari(somma);
