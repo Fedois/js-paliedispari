@@ -1,5 +1,5 @@
 function palidromaONo (parola){
-    if(parolaInserita == parolaInversa){
+    if(parola == parolaInversa){
         alert("la parola E' palidroma");
     } 
     else {
@@ -7,13 +7,13 @@ function palidromaONo (parola){
     }
 }
 
-let parolaInserita = prompt('inserisci una parola e verifichiamo se è palindroma oppure no');
+let parolaInserita = prompt('inserisci una parola e verifichiamo se è palidroma oppure no');
 let carattere;
 let parolaInversa = '';
 
 let i = 0
 while(isNaN(parolaInserita) == false){
-    parolaInserita = prompt('valori non validi. inserisci una parola e verifichiamo se è palindroma oppure no');
+    parolaInserita = prompt('valori non validi. inserisci una parola e verifichiamo se è palidroma oppure no');
 
     i++
 }
